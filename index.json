@@ -1,0 +1,40 @@
+{
+  "name": "Cheeksy's VPM Repository",
+  "id": "dev.cheeksy.vpm",
+  "url": "https://vpm.cheeksy.dev/index.json",
+  "author": {
+    "name": "Cheeksy",
+    "url": "https://cheeksy.dev"
+  },
+  "packages": {
+    "dev.cheeksy.bakedvolumetrics": {
+      "versions": {
+        "1.0.0": {
+          "name": "dev.cheeksy.bakedvolumetrics",
+          "version": "1.0.0",
+          "displayName": "Baked Volumetrics",
+          "description": "A lightweight baked volumetric fog solution with support for exclusion volumes. Fork of frostbone25's Unity-Baked-Volumetrics with additional features including fog exclusion zones for buildings and other areas.",
+          "unity": "2019.4",
+          "unityRelease": "31f1",
+          "documentationUrl": "https://github.com/notreallycheeks/Unity-Baked-Volumetrics",
+          "changelogUrl": "https://github.com/notreallycheeks/Unity-Baked-Volumetrics/releases",
+          "licensesUrl": "https://github.com/notreallycheeks/Unity-Baked-Volumetrics/blob/main/LICENSE",
+          "keywords": [
+            "volumetrics",
+            "fog",
+            "lighting",
+            "baked",
+            "vrchat"
+          ],
+          "author": {
+            "name": "Cheeksy (fork of frostbone25)",
+            "url": "https://github.com/notreallycheeks"
+          },
+          "vpmDependencies": {},
+          "url": "https://github.com/notreallycheeks/Unity-Baked-Volumetrics/releases/download/v1.0.0/dev.cheeksy.bakedvolumetrics-1.0.0.zip",
+          "zipSHA256": ""
+        }
+      }
+    }
+  }
+}
