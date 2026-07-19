@@ -25,8 +25,24 @@ Use the cheeks SSH key for git operations:
 - `index.html` - Landing page for browser visitors
 - `CNAME` - GitHub Pages custom domain configuration
 
-## Adding New Packages
-When adding a new package to the VPM:
-1. Create a release on the package's GitHub repo with a zip file
-2. Add the package entry to `index.json` under `packages`
-3. Update `index.html` to show the new package
+**This repo is the canonical listing** (`https://vpm.cheeksy.dev/index.json`).
+A byte-identical copy of `index.json` is kept at
+`notreallycheeks.github.io/vpm/index.json` because `https://cheeksy.dev/vpm/index.json`
+has also been live and may be in someone's VCC — keep the two files in sync whenever
+this one changes. The human-facing landing page is `cheeksy.dev/vpm/` in the
+`notreallycheeks.github.io` repo; update its package list too.
+
+## Adding New Packages / Versions
+1. In the package's repo, commit the package folder (the directory containing
+   `package.json`, with all `.meta` files), then build the zip from the committed
+   tree so nothing stray gets in:
+   `git archive --format=zip -o dev.cheeksy.PKG-X.Y.Z.zip HEAD:path/to/PackageFolder`
+   (package.json must end up at the ZIP ROOT.)
+2. `sha256sum` the zip.
+3. `gh release create vX.Y.Z <zip>` on that repo (gh active account must be
+   `notreallycheeks` — check `gh auth status`).
+4. Add the version entry to `index.json` here: `url` = the release asset's
+   `releases/download/vX.Y.Z/<file>.zip` URL, `zipSHA256` = the hash (lowercase hex).
+5. Update `index.html` here, mirror `index.json` to the site copy, and update the
+   package list in `notreallycheeks.github.io/vpm/index.html`.
+6. Commit + push both repos (GitHub Pages redeploys automatically).
